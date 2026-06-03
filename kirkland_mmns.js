@@ -1367,10 +1367,10 @@ function test1_8RoutineBegin(snapshot) {
     routineTimer.reset();
     test1_8MaxDurationReached = false;
     // update component parameters for each repeat
-    opt4_2.setText(Opt4);
-    opt3_2.setText(Opt3);
-    opt2_2.setText(Opt2);
-    opt1_2.setText(Opt1);
+    opt4_2.setText(String(Opt4));
+    opt3_2.setText(String(Opt3));
+    opt2_2.setText(String(Opt2));
+    opt1_2.setText(String(Opt1));
     image.setImage(Qimage);
     psychoJS.experiment.addData('test1_8.started', globalClock.getTime());
     test1_8MaxDuration = null
