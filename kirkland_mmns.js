@@ -284,7 +284,7 @@ async function experimentInit() {
   box1 = new visual.TextBox({
     win: psychoJS.window,
     name: 'box1',
-    text: '.',
+    text: '',
     placeholder: 'Type here...',
     font: 'Noto Sans TC',
     pos: [(- 0.45), (- 0.2)], 
@@ -310,7 +310,7 @@ async function experimentInit() {
   box2 = new visual.TextBox({
     win: psychoJS.window,
     name: 'box2',
-    text: '.',
+    text: '',
     placeholder: 'Type here...',
     font: 'Noto Sans TC',
     pos: [(- 0.15), (- 0.2)], 
@@ -336,7 +336,7 @@ async function experimentInit() {
   box3 = new visual.TextBox({
     win: psychoJS.window,
     name: 'box3',
-    text: '.',
+    text: '',
     placeholder: 'Type here...',
     font: 'Noto Sans TC',
     pos: [0.15, (- 0.2)], 
@@ -362,7 +362,7 @@ async function experimentInit() {
   box4 = new visual.TextBox({
     win: psychoJS.window,
     name: 'box4',
-    text: '.',
+    text: '',
     placeholder: 'Type here...',
     font: 'Noto Sans TC',
     pos: [0.45, (- 0.2)], 
@@ -634,7 +634,7 @@ async function experimentInit() {
   box1_3 = new visual.TextBox({
     win: psychoJS.window,
     name: 'box1_3',
-    text: '.',
+    text: '',
     placeholder: 'Type here...',
     font: 'Noto Sans TC',
     pos: [(- 0.45), (- 0.2)], 
@@ -660,7 +660,7 @@ async function experimentInit() {
   box2_2 = new visual.TextBox({
     win: psychoJS.window,
     name: 'box2_2',
-    text: '.',
+    text: '',
     placeholder: 'Type here...',
     font: 'Noto Sans TC',
     pos: [(- 0.15), (- 0.2)], 
@@ -686,7 +686,7 @@ async function experimentInit() {
   box3_2 = new visual.TextBox({
     win: psychoJS.window,
     name: 'box3_2',
-    text: '.',
+    text: '',
     placeholder: 'Type here...',
     font: 'Noto Sans TC',
     pos: [0.15, (- 0.2)], 
@@ -712,7 +712,7 @@ async function experimentInit() {
   box4_2 = new visual.TextBox({
     win: psychoJS.window,
     name: 'box4_2',
-    text: '.',
+    text: '',
     placeholder: 'Type here...',
     font: 'Noto Sans TC',
     pos: [0.45, (- 0.2)], 
