@@ -1368,17 +1368,9 @@ function test1_8RoutineBegin(snapshot) {
     test1_8MaxDurationReached = false;
     // update component parameters for each repeat
     opt4_2.setText(Opt4);
-    // reset opt4_2 to account for continued clicks & clear times on/off
-    opt4_2.reset()
     opt3_2.setText(Opt3);
-    // reset opt3_2 to account for continued clicks & clear times on/off
-    opt3_2.reset()
     opt2_2.setText(Opt2);
-    // reset opt2_2 to account for continued clicks & clear times on/off
-    opt2_2.reset()
     opt1_2.setText(Opt1);
-    // reset opt1_2 to account for continued clicks & clear times on/off
-    opt1_2.reset()
     image.setImage(Qimage);
     psychoJS.experiment.addData('test1_8.started', globalClock.getTime());
     test1_8MaxDuration = null
