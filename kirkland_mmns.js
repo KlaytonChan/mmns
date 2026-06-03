@@ -98,7 +98,7 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
     // resources:
-    {'name': 'kirkland/kirkland1.csv', 'path': 'kirkland1.csv'},
+    {'name': 'kirkland1.csv', 'path': 'kirkland1.csv'},
     {'name': 'kirkland/images/1.png', 'path': 'images/1.png'},
     {'name': 'kirkland/images/2.png', 'path': 'images/2.png'},
     {'name': 'kirkland/images/3.png', 'path': 'images/3.png'},
@@ -107,7 +107,7 @@ psychoJS.start({
     {'name': 'kirkland/images/6.png', 'path': 'images/6.png'},
     {'name': 'kirkland/images/7.png', 'path': 'images/7.png'},
     {'name': 'kirkland/images/8.png', 'path': 'images/8.png'},
-    {'name': 'kirkland/kirkland2.csv', 'path': 'kirkland2.csv'},
+    {'name': 'kirkland2.csv', 'path': 'kirkland2.csv'},
     {'name': 'kirkland/images/10.png', 'path': 'images/10.png'},
     {'name': 'kirkland/images/11.png', 'path': 'images/11.png'},
     {'name': 'kirkland/images/12.png', 'path': 'images/12.png'},
@@ -115,7 +115,7 @@ psychoJS.start({
     {'name': 'kirkland/images/14.png', 'path': 'images/14.png'},
     {'name': 'kirkland/images/15.png', 'path': 'images/15.png'},
     {'name': 'kirkland/images/16.png', 'path': 'images/16.png'},
-    {'name': 'kirkland/kirkland3.csv', 'path': 'kirkland3.csv'},
+    {'name': 'kirkland3.csv', 'path': 'kirkland3.csv'},
     {'name': 'kirkland/images/18.png', 'path': 'images/18.png'},
     {'name': 'kirkland/images/19.png', 'path': 'images/19.png'},
     {'name': 'kirkland/images/20.png', 'path': 'images/20.png'},
@@ -1162,7 +1162,7 @@ function testloop1LoopBegin(testloop1LoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'kirkland/kirkland1.csv',
+      trialList: 'kirkland1.csv',
       seed: undefined, name: 'testloop1'
     });
     psychoJS.experiment.addLoop(testloop1); // add the loop to the experiment
@@ -1228,7 +1228,7 @@ function testloop2LoopBegin(testloop2LoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'kirkland/kirkland2.csv',
+      trialList: 'kirkland2.csv',
       seed: undefined, name: 'testloop2'
     });
     psychoJS.experiment.addLoop(testloop2); // add the loop to the experiment
@@ -1294,7 +1294,7 @@ function testloop3LoopBegin(testloop3LoopScheduler, snapshot) {
       psychoJS: psychoJS,
       nReps: 1, method: TrialHandler.Method.SEQUENTIAL,
       extraInfo: expInfo, originPath: undefined,
-      trialList: 'kirkland/kirkland3.csv',
+      trialList: 'kirkland3.csv',
       seed: undefined, name: 'testloop3'
     });
     psychoJS.experiment.addLoop(testloop3); // add the loop to the experiment
