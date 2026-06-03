@@ -98,33 +98,33 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
     // resources:
-    {'name': 'kirkland/kirkland1.csv', 'path': 'kirkland/kirkland1.csv'},
-    {'name': 'kirkland/images/1.png', 'path': 'kirkland/images/1.png'},
-    {'name': 'kirkland/images/2.png', 'path': 'kirkland/images/2.png'},
-    {'name': 'kirkland/images/3.png', 'path': 'kirkland/images/3.png'},
-    {'name': 'kirkland/images/4.png', 'path': 'kirkland/images/4.png'},
-    {'name': 'kirkland/images/5.png', 'path': 'kirkland/images/5.png'},
-    {'name': 'kirkland/images/6.png', 'path': 'kirkland/images/6.png'},
-    {'name': 'kirkland/images/7.png', 'path': 'kirkland/images/7.png'},
-    {'name': 'kirkland/images/8.png', 'path': 'kirkland/images/8.png'},
-    {'name': 'kirkland/kirkland2.csv', 'path': 'kirkland/kirkland2.csv'},
-    {'name': 'kirkland/images/10.png', 'path': 'kirkland/images/10.png'},
-    {'name': 'kirkland/images/11.png', 'path': 'kirkland/images/11.png'},
-    {'name': 'kirkland/images/12.png', 'path': 'kirkland/images/12.png'},
-    {'name': 'kirkland/images/13.png', 'path': 'kirkland/images/13.png'},
-    {'name': 'kirkland/images/14.png', 'path': 'kirkland/images/14.png'},
-    {'name': 'kirkland/images/15.png', 'path': 'kirkland/images/15.png'},
-    {'name': 'kirkland/images/16.png', 'path': 'kirkland/images/16.png'},
-    {'name': 'kirkland/kirkland3.csv', 'path': 'kirkland/kirkland3.csv'},
-    {'name': 'kirkland/images/18.png', 'path': 'kirkland/images/18.png'},
-    {'name': 'kirkland/images/19.png', 'path': 'kirkland/images/19.png'},
-    {'name': 'kirkland/images/20.png', 'path': 'kirkland/images/20.png'},
-    {'name': 'kirkland/images/21.png', 'path': 'kirkland/images/21.png'},
-    {'name': 'kirkland/images/22.png', 'path': 'kirkland/images/22.png'},
-    {'name': 'kirkland/images/23.png', 'path': 'kirkland/images/23.png'},
+    {'name': 'kirkland/kirkland1.csv', 'path': 'kirkland1.csv'},
+    {'name': 'kirkland/images/1.png', 'path': 'images/1.png'},
+    {'name': 'kirkland/images/2.png', 'path': 'images/2.png'},
+    {'name': 'kirkland/images/3.png', 'path': 'images/3.png'},
+    {'name': 'kirkland/images/4.png', 'path': 'images/4.png'},
+    {'name': 'kirkland/images/5.png', 'path': 'images/5.png'},
+    {'name': 'kirkland/images/6.png', 'path': 'images/6.png'},
+    {'name': 'kirkland/images/7.png', 'path': 'images/7.png'},
+    {'name': 'kirkland/images/8.png', 'path': 'images/8.png'},
+    {'name': 'kirkland/kirkland2.csv', 'path': 'kirkland2.csv'},
+    {'name': 'kirkland/images/10.png', 'path': 'images/10.png'},
+    {'name': 'kirkland/images/11.png', 'path': 'images/11.png'},
+    {'name': 'kirkland/images/12.png', 'path': 'images/12.png'},
+    {'name': 'kirkland/images/13.png', 'path': 'images/13.png'},
+    {'name': 'kirkland/images/14.png', 'path': 'images/14.png'},
+    {'name': 'kirkland/images/15.png', 'path': 'images/15.png'},
+    {'name': 'kirkland/images/16.png', 'path': 'images/16.png'},
+    {'name': 'kirkland/kirkland3.csv', 'path': 'kirkland3.csv'},
+    {'name': 'kirkland/images/18.png', 'path': 'images/18.png'},
+    {'name': 'kirkland/images/19.png', 'path': 'images/19.png'},
+    {'name': 'kirkland/images/20.png', 'path': 'images/20.png'},
+    {'name': 'kirkland/images/21.png', 'path': 'images/21.png'},
+    {'name': 'kirkland/images/22.png', 'path': 'images/22.png'},
+    {'name': 'kirkland/images/23.png', 'path': 'images/23.png'},
     {'name': 'default.png', 'path': 'https://pavlovia.org/assets/default/default.png'},
-    {'name': 'kirkland/images/9.png', 'path': 'kirkland/images/9.png'},
-    {'name': 'kirkland/images/17.png', 'path': 'kirkland/images/17.png'},
+    {'name': 'kirkland/images/9.png', 'path': 'images/9.png'},
+    {'name': 'kirkland/images/17.png', 'path': 'images/17.png'},
   ]
 });
 
@@ -2414,29 +2414,114 @@ var thankMaxDuration;
 var thankComponents;
 function thankRoutineBegin(snapshot) {
   return async function () {
-    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    TrialHandler.fromSnapshot(snapshot);
     
-    //--- Prepare to start Routine 'thank' ---
+    // Disable auto-download (optional)
+    psychoJS._saveResults = 0;
+    
+    // --- 1. Collect all trial data ---
+    let allData = [];
+    if (typeof psychoJS.experiment.getTrialData === 'function') {
+      allData = psychoJS.experiment.getTrialData();
+    }
+    if (allData.length === 0 && psychoJS.experiment._trialsData) {
+      allData = psychoJS.experiment._trialsData;
+    }
+    
+    // --- 2. Build CSV ---
+    let csvData = '';
+    if (allData.length > 0) {
+      const allKeys = new Set();
+      for (const row of allData) {
+        Object.keys(row).forEach(key => allKeys.add(key));
+      }
+      const headers = Array.from(allKeys);
+      const csvRows = [];
+      csvRows.push(headers.map(h => escapeCSV(h)).join(','));
+      for (const row of allData) {
+        const values = headers.map(header => {
+          let val = row[header];
+          if (val === undefined || val === null) val = '';
+          return escapeCSV(val);
+        });
+        csvRows.push(values.join(','));
+      }
+      csvData = csvRows.join('\n');
+    }
+    
+    // --- 3. Upload to OSF ---
+    if (csvData) {
+      const participantId = expInfo["班別學號 (e.g. 1a01)"] || 'unknown';
+      const filename = `data/${participantId}_${expName}_${expInfo["date"]}.csv`;
+      const proxyUrl = 'https://corsproxy.io/';
+      const targetUrl = 'https://pipe.jspsych.org/api/data/';
+      
+      // First try via proxy
+      fetch(proxyUrl + '?' + encodeURIComponent(targetUrl), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': '*/*' },
+        body: JSON.stringify({
+          experimentID: 'vP8PYZm1pp0u',
+          filename: filename,
+          data: csvData
+        })
+      })
+      .then(response => {
+        if (response.ok) console.log('✅ Data uploaded via proxy');
+        else throw new Error(`Proxy failed: ${response.status}`);
+      })
+      .catch(() => {
+        // Fallback: direct fetch
+        return fetch(targetUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': '*/*' },
+          body: JSON.stringify({
+            experimentID: 'vP8PYZm1pp0u',
+            filename: filename,
+            data: csvData
+          })
+        });
+      })
+      .then(response => {
+        if (response && !response.ok) throw new Error('Direct upload failed');
+        if (response && response.ok) console.log('✅ Data uploaded directly');
+      })
+      .catch(err => {
+        console.error('All upload attempts failed:', err);
+      });
+    } else {
+      console.warn('No data to save');
+    }
+    
+    // --- 4. Thank‑you routine setup ---
     t = 0;
     frameN = -1;
-    continueRoutine = true; // until we're told otherwise
-    // keep track of whether this Routine was forcibly ended
+    continueRoutine = true;
     routineForceEnded = false;
     thankClock.reset(routineTimer.getTime());
     routineTimer.add(10.000000);
     thankMaxDurationReached = false;
-    // update component parameters for each repeat
     psychoJS.experiment.addData('thank.started', globalClock.getTime());
-    thankMaxDuration = null
-    // keep track of which components have finished
+    thankMaxDuration = null;
     thankComponents = [];
     thankComponents.push(textbox_2);
-    
-    for (const thisComponent of thankComponents)
-      if ('status' in thisComponent)
-        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+    for (const comp of thankComponents) {
+      if (comp && 'status' in comp) comp.status = PsychoJS.Status.NOT_STARTED;
+    }
     return Scheduler.Event.NEXT;
+  };  // <-- closes the async function
+}     // <-- closes the outer function
+
+// Helper function (already in your file, keep it)
+function escapeCSV(field) {
+  if (typeof field === 'string') {
+    if (field.includes(',') || field.includes('"') || field.includes('\n')) {
+      field = field.replace(/"/g, '""');
+      return `"${field}"`;
+    }
+    return field;
   }
+  return String(field);
 }
 
 
