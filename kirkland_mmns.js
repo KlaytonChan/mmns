@@ -1690,17 +1690,9 @@ function test1_8RoutineEnd(snapshot) {
     }
     psychoJS.experiment.addData('test1_8.stopped', globalClock.getTime());
     psychoJS.experiment.addData('opt4_2.numClicks', opt4_2.numClicks);
-    psychoJS.experiment.addData('opt4_2.timesOn', opt4_2.timesOn);
-    psychoJS.experiment.addData('opt4_2.timesOff', opt4_2.timesOff);
     psychoJS.experiment.addData('opt3_2.numClicks', opt3_2.numClicks);
-    psychoJS.experiment.addData('opt3_2.timesOn', opt3_2.timesOn);
-    psychoJS.experiment.addData('opt3_2.timesOff', opt3_2.timesOff);
     psychoJS.experiment.addData('opt2_2.numClicks', opt2_2.numClicks);
-    psychoJS.experiment.addData('opt2_2.timesOn', opt2_2.timesOn);
-    psychoJS.experiment.addData('opt2_2.timesOff', opt2_2.timesOff);
     psychoJS.experiment.addData('opt1_2.numClicks', opt1_2.numClicks);
-    psychoJS.experiment.addData('opt1_2.timesOn', opt1_2.timesOn);
-    psychoJS.experiment.addData('opt1_2.timesOff', opt1_2.timesOff);
     // the Routine "test1_8" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -2021,8 +2013,6 @@ function test9RoutineEnd(snapshot) {
     psychoJS.experiment.addData('topbox.text',topbox.text)
     psychoJS.experiment.addData('bottombox.text',bottombox.text)
     psychoJS.experiment.addData('ok_2.numClicks', ok_2.numClicks);
-    psychoJS.experiment.addData('ok_2.timesOn', ok_2.timesOn);
-    psychoJS.experiment.addData('ok_2.timesOff', ok_2.timesOff);
     // the Routine "test9" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
@@ -2378,17 +2368,9 @@ function test17RoutineEnd(snapshot) {
     }
     psychoJS.experiment.addData('test17.stopped', globalClock.getTime());
     psychoJS.experiment.addData('opt4.numClicks', opt4.numClicks);
-    psychoJS.experiment.addData('opt4.timesOn', opt4.timesOn);
-    psychoJS.experiment.addData('opt4.timesOff', opt4.timesOff);
     psychoJS.experiment.addData('opt3.numClicks', opt3.numClicks);
-    psychoJS.experiment.addData('opt3.timesOn', opt3.timesOn);
-    psychoJS.experiment.addData('opt3.timesOff', opt3.timesOff);
     psychoJS.experiment.addData('opt2.numClicks', opt2.numClicks);
-    psychoJS.experiment.addData('opt2.timesOn', opt2.timesOn);
-    psychoJS.experiment.addData('opt2.timesOff', opt2.timesOff);
     psychoJS.experiment.addData('opt1.numClicks', opt1.numClicks);
-    psychoJS.experiment.addData('opt1.timesOn', opt1.timesOn);
-    psychoJS.experiment.addData('opt1.timesOff', opt1.timesOff);
     // the Routine "test17" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
