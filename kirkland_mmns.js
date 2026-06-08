@@ -391,7 +391,7 @@ async function experimentInit() {
     text: '',
     font: 'Noto Sans TC',
     pos: [0.45, (- 0.2)],
-    size: [0.3, 0.6],
+    size: [0.3, 0.3],
     padding: null,
     anchor: 'center',
     ori: 0.0,
@@ -403,7 +403,7 @@ async function experimentInit() {
     borderWidth: 0.0,
     opacity: null,
     depth: -4,
-    letterHeight: 0.04,
+    letterHeight: 0.15,
     bold: false,
     italic: false,
   });
