@@ -289,11 +289,11 @@ async function experimentInit() {
     font: 'Noto Sans TC',
     pos: [(- 0.45), (- 0.2)], 
     draggable: false,
-    letterHeight: 0.05,
+    letterHeight: 0.04,
     lineSpacing: 1.0,
     size: [0.3, 0.3],  units: undefined, 
     ori: 0.0,
-    color: 'aliceblue', colorSpace: 'rgb',
+    color: 'black', colorSpace: 'rgb',
     fillColor: 'aliceblue', borderColor: 'black',
     languageStyle: 'LTR',
     bold: false, italic: false,
@@ -315,11 +315,11 @@ async function experimentInit() {
     font: 'Noto Sans TC',
     pos: [(- 0.15), (- 0.2)], 
     draggable: false,
-    letterHeight: 0.05,
+    letterHeight: 0.04,
     lineSpacing: 1.0,
     size: [0.3, 0.3],  units: undefined, 
     ori: 0.0,
-    color: 'aliceblue', colorSpace: 'rgb',
+    color: 'black', colorSpace: 'rgb',
     fillColor: 'aliceblue', borderColor: 'black',
     languageStyle: 'LTR',
     bold: false, italic: false,
@@ -341,11 +341,11 @@ async function experimentInit() {
     font: 'Noto Sans TC',
     pos: [0.15, (- 0.2)], 
     draggable: false,
-    letterHeight: 0.05,
+    letterHeight: 0.04,
     lineSpacing: 1.0,
     size: [0.3, 0.3],  units: undefined, 
     ori: 0.0,
-    color: 'aliceblue', colorSpace: 'rgb',
+    color: 'black', colorSpace: 'rgb',
     fillColor: 'aliceblue', borderColor: 'black',
     languageStyle: 'LTR',
     bold: false, italic: false,
@@ -367,11 +367,11 @@ async function experimentInit() {
     font: 'Noto Sans TC',
     pos: [0.45, (- 0.2)], 
     draggable: false,
-    letterHeight: 0.05,
+    letterHeight: 0.04,
     lineSpacing: 1.0,
     size: [0.3, 0.3],  units: undefined, 
     ori: 0.0,
-    color: 'aliceblue', colorSpace: 'rgb',
+    color: 'black', colorSpace: 'rgb',
     fillColor: 'aliceblue', borderColor: 'black',
     languageStyle: 'LTR',
     bold: false, italic: false,
@@ -397,13 +397,13 @@ async function experimentInit() {
     ori: 0.0,
     units: psychoJS.window.units,
     color: 'black',
-    fillColor: null,
+    fillColor: 'blue',
     borderColor: null,
     colorSpace: 'rgb',
     borderWidth: 0.0,
     opacity: null,
     depth: -4,
-    letterHeight: 0.04,
+    letterHeight: 0.15,
     bold: false,
     italic: false,
   });
@@ -1367,10 +1367,10 @@ function test1_8RoutineBegin(snapshot) {
     routineTimer.reset();
     test1_8MaxDurationReached = false;
     // update component parameters for each repeat
-    opt4_2.setText(String(Opt4));
-    opt3_2.setText(String(Opt3));
-    opt2_2.setText(String(Opt2));
-    opt1_2.setText(String(Opt1));
+    box4.setText(String(Opt4));
+    box3.setText(String(Opt3));
+    box2.setText(String(Opt2));
+    box1.setText(String(Opt1));
     image.setImage(Qimage);
     psychoJS.experiment.addData('test1_8.started', globalClock.getTime());
     test1_8MaxDuration = null
